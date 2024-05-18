@@ -1,8 +1,10 @@
-function makeTransaction(quantity, pricePerDroid) {
-    const totalPrice = quantity * pricePerDroid;
-    const message = `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    return message;
-}
-console.log(makeTransaction(5, 3000));
-console.log(makeTransaction(3, 1000));
-console.log(makeTransaction(10, 500));
+const categoriesList = document.querySelector("#categories");
+const categoriesItems = categoriesList.querySelectorAll(".item");
+categoriesList.style.listStyleType = 'none';
+console.log(`Number of categories: ${categoriesItems.length}`);
+categoriesItems.forEach(item => {
+    const categoriesTitle = item.querySelector("h2").textContent;
+    const categoriesElements = item.querySelectorAll("ul li").length;
+    console.log(`Categore: ${categoriesTitle}`);
+    console.log(`Elements: ${categoriesElements}`);
+});
